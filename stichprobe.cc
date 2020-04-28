@@ -3,15 +3,23 @@
 #include<cmath>
 
 int main() {
-  std::ifstream fin("datensumme.txt");
+
   int i;
   double n = 234;
-  double c,b, sumc, mit, var, abw;
+  //double n = 26;
+  double c, sumc, mit, var, abw;
 
-  
-  for(i=0; i<n; ++i) {
+  std::ifstream fin("datensumme.txt");  //=> Mit=2,808  Var=1,463
+  //std::ifstream fin("mittelwerte.txt"); => Mit=3,115  (Var=0,299)
+  //std::ifstream fin("varianzen.txt");   => Mit=2,436  (Var=1,687)
+
+  //Der Mittelwert und die Varianz der datensumme.txt sind kleiner. 
+
+  for (i=0; i<n; ++i) {
+
     fin >> c;
     sumc += c;
+
   }
 
   mit = sumc / n;
@@ -19,10 +27,12 @@ int main() {
 
 
   std::ifstream fin2("datensumme.txt");
-  for(i=0; i<n; ++i) {
+  //std::ifstream fin2("mittelwerte.txt"); 
+  //std::ifstream fin2("varianzen.txt"); 
+  for (i=0; i<n; ++i) {
 
     fin2 >> c;
-    var += pow((c-mit), 2);
+    var += pow((c - mit), 2);
 
   }
 
