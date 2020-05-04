@@ -6,7 +6,7 @@ int main() {
 
   int i;
   double n = 234;
-  double c, c2, sumc, mit, var, abw;
+  double c, sumc=0, mit, var, abw;
 
   std::ifstream fin("datensumme.txt");
   std::ifstream fin2("datensumme.txt");
@@ -22,11 +22,12 @@ int main() {
     mit = sumc / 9;
     //std::cout << "Mittelwert:  " << mit << std::endl;
     fout << mit << std :: endl ;
+    sumc = 0;
 
     for (i=0;i<9;++i) {
 
-      fin2 >> c2;
-      var += pow((c2 - mit), 2);
+      fin2 >> c;
+      var += pow((c - mit), 2);
       
     }
 
