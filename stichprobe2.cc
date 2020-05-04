@@ -22,7 +22,6 @@ int main() {
     mit = sumc / 9;
     //std::cout << "Mittelwert:  " << mit << std::endl;
     fout << mit << std :: endl ;
-    sumc = 0;
 
     for (i=0;i<9;++i) {
 
@@ -37,8 +36,36 @@ int main() {
     var = 0;
   }
 
+  sumc = 0;
+  std::ifstream fin3("mittelwerte.txt");
+  for (i=0; i<26; ++i) {
+
+    fin3 >> c;
+    sumc += c;
+
+  }
+
+  mit = sumc / 26;
+  fout << mit << std::endl;
+  
+
+  sumc = 0;
+  std::ifstream fin4("varianzen.txt");
+  for (i=0; i<26; ++i) {
+
+    fin4 >> c;
+    sumc += c;
+
+  }
+
+  mit = sumc / 26;
+  fout2 << mit << std::endl;
+  
   fin.close();
   fin2.close();
+  fin3.close();
+  fin4.close();
   fout.close();
   fout2.close();
+
 }
