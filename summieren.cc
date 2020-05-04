@@ -9,7 +9,7 @@ int main() {
   int b; //Variable für den zweiten Summanden
   int c; //Variable für die Summe
   
-  while(! fin.eof()) { //while Schleife läuft bis zum Ende der daten.txt
+  for(int i=0; i<234; ++i) {
   
     fin >> a; //Lesen der ersten Zahl
     fin >> b; //Lesen der zweiten Zahl
