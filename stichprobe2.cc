@@ -6,7 +6,7 @@ int main() {
 
   int i;
   double n = 234;
-  double c, sumc=0, mit, var, abw;
+  double c, sumc, mit, var, abw;
 
   std::ifstream fin("datensumme.txt");
   std::ifstream fin2("datensumme.txt");
@@ -47,8 +47,9 @@ int main() {
   }
 
   mit = sumc / 26;
-  fout << mit << std::endl;
-  
+  //fout << mit << std::endl;
+  std::cout << "Mittelwert:  " << mit << std::endl;
+
 
   sumc = 0;
   std::ifstream fin4("varianzen.txt");
@@ -60,8 +61,9 @@ int main() {
   }
 
   mit = sumc / 26;
-  fout2 << mit << std::endl;
-  
+  //fout2 << mit << std::endl;
+  std::cout << "Mittelwert:  " << mit << std::endl;
+
   fin.close();
   fin2.close();
   fin3.close();
